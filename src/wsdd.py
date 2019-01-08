@@ -291,6 +291,9 @@ def wsd_handle_resolve(resolve, xaddr):
     if addr is None:
         raise ValueError('invalid resolve request: missing endpoint address')
 
+    ## JCL Trace of uuid
+    logger.info('handle Resolve addr.text {0} args.uuid.urn ({1})'.format(addr.text, args.uuid.urn))
+    
     if not addr.text == args.uuid.urn:
         raise ValueError('invalid resolve request: address does not match')
 
